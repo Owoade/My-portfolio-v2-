@@ -12,7 +12,7 @@ const bricolage = Bricolage_Grotesque({
 
 const browserTitle = "Owoade Anuoluwapo — Backend and Full-Stack Engineer";
 const metaDescription =
-  "A software engineer with 6+ years of experience building reliable, high-performance web applications that solve real-world problems: e-voting, ticketing, contests, payment aggregation, and AI trading infrastructure.";
+  "A software engineer with 6+ years of experience building reliable, high-performance web applications that solve real-world problems.";
 
 const metadataBase = isTodo(site.siteUrl) ? undefined : new URL(site.siteUrl);
 
