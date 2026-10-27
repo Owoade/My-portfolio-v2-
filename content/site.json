@@ -1,0 +1,18 @@
+{
+  "name": "Owoade Anuoluwapo Ayoade",
+  "shortName": "Owoade",
+  "role": "Backend and full-stack engineer",
+  "positioning": "Backend and full-stack engineer who ships and leads production systems.",
+  "subLine": "Co-Founder and Technical Lead at SmoothBallot, an e-voting platform powering elections across federal universities.",
+  "proofNote": "TODO(owner): confirm the sub-line wording and fill the four stats above with real numbers.",
+  "stats": [
+    { "value": "TODO(owner): number", "label": "Elections run on SmoothBallot" },
+    { "value": "TODO(owner): number", "label": "Votes processed" },
+    { "value": "TODO(owner): number", "label": "Federal universities served" },
+    { "value": "TODO(owner): number", "label": "Products in production" }
+  ],
+  "email": "anu@owoade.dev",
+  "linkedin": "https://www.linkedin.com/in/owoade-anuoluwapo-a09a03235/",
+  "github": "TODO(owner): GitHub URL",
+  "siteUrl": "TODO(owner): final domain, e.g. https://yourname.com"
+}

@@ -1,0 +1,41 @@
+{
+  "note": "Only entries with approved: true render on the site. approved means the recommender gave written permission. Trimming a quote is allowed only with an ellipsis and must not change meaning.",
+  "quotes": [
+    {
+      "name": "Alan Ljungström-Caunt",
+      "avatar": "/testimonials/alan.jpeg",
+      "role": "Technology Leader, Senior Data Scientist",
+      "company": "Eagle AI Labs",
+      "quote": "I worked with Owoade at Eagle AI Labs and always found him easy to rely on. He takes real ownership of what he's working on. Once something was in his hands, it got done without needing to chase.",
+      "linkedinUrl": "",
+      "approved": true
+    },
+    {
+      "name": "Taiwo Akinropo",
+      "avatar": "/testimonials/taiwo.jpeg",
+      "role": "Founder and CEO, Heyfood",
+      "company": "Heyfood",
+      "quote": "Working with Anu was bliss, he's a really good & solid engineer. I could hand off a feature, and he would figure everything out end-to-end, no hand-holding needed.",
+      "linkedinUrl": "",
+      "approved": true
+    },
+    {
+      "name": "Seyi Osunade",
+      "avatar": "/testimonials/prof.osunade.jpeg",
+      "role": "Professor, University of Ibadan",
+      "company": "University of Ibadan",
+      "quote": "Anuoluwapo pays attention to details, keeps to timelines and was present at project meetings. He delivers on tasks assigned to him.",
+      "linkedinUrl": "",
+      "approved": true
+    },
+    {
+      "name": "Israel Alagbe",
+      "avatar": "/testimonials/israel.jpeg",
+      "role": "Senior Software Engineer",
+      "company": "",
+      "quote": "Anuoluwapo is a great person to work with. He is also very dedicated to his duties and you can always trust him to do the right thing even when no one is watching.",
+      "linkedinUrl": "",
+      "approved": true
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "groups": [
+    {
+      "name": "Backend",
+      "items": ["Node.js", "TypeScript", "NestJS", "Go"]
+    },
+    {
+      "name": "Frontend",
+      "items": ["Next.js", "React", "Vue.js"]
+    },
+    {
+      "name": "Data",
+      "items": ["PostgreSQL", "MySQL", "Redis", "MongoDB"]
+    },
+    {
+      "name": "Infra",
+      "items": ["Docker", "Kubernetes", "AWS", "Azure", "Google Cloud Platform"]
+    }
+  ]
+}

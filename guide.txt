@@ -1,0 +1,184 @@
+PORTFOLIO BUILD PLAN
+Owner: Owoade (Anuoluwapo Owoade Ayoade)
+Role: Backend/full-stack engineer, Co-Founder & Technical Lead at SmoothBallot (parent company: Smooth Africa)
+Contact: owoadeanuoluwapo2@gmail.com | linkedin.com/in/owoade-anuoluwapo-a09a03235/
+
+======================================================================
+1. GOAL
+======================================================================
+Build a dark-themed personal portfolio site that positions the owner as a
+senior backend/full-stack engineer who ships and leads production systems.
+Home page has: Hero, Selected Works, Skills, Recommendations, Contact.
+Each work has its own case study page (Problem, Solution, Result, etc).
+
+======================================================================
+2. HARD RULES FOR THE AGENT
+======================================================================
+- Never invent metrics, quotes, client names, or dates. Where data is
+  missing, insert a visible placeholder: TODO(owner): <what is needed>.
+- Do not use em dashes anywhere in copy.
+- Keep copy short and precise. No filler, no buzzwords.
+- All content lives in files (MDX/JSON), never hardcoded in components.
+- Dark theme only. Meet WCAG AA contrast.
+
+======================================================================
+3. STACK
+======================================================================
+- Next.js (App Router), TypeScript, Tailwind CSS
+- MDX for case studies (contentlayer or next-mdx-remote)
+- JSON for skills and recommendations
+- Fonts: Inter or Geist (text), JetBrains Mono (tags, code)
+- Hosting: Vercel
+- Optional: Framer Motion for subtle transitions only
+
+======================================================================
+4. DESIGN TOKENS
+======================================================================
+Define as CSS variables and map into the Tailwind config.
+
+--bg:        #0B0D10
+--surface:   #12161B
+--border:    #1F2630
+--text:      #E8ECF1
+--muted:     #8A94A3
+--accent:    #34D399   (primary, emerald)
+--accent-2:  #F5B94A   (amber, use sparingly for result metrics)
+
+Guidelines:
+- Cards: surface background, 1px border, 12px radius, subtle hover lift
+  and accent border glow.
+- Accent for links, CTAs, active states. Amber only for numbers/results.
+- Generous spacing, max content width ~1100px, strong type hierarchy.
+
+======================================================================
+5. SITE MAP
+======================================================================
+/                     Home
+/work/[slug]          Case study (one per work)
+/work                 Optional index of all works
+/contact              Optional, or anchor on home
+
+======================================================================
+6. HOME PAGE SECTIONS
+======================================================================
+6.1 HERO
+- Name, one-line positioning statement
+- Sub-line with proof, e.g. e-voting platform powering elections across
+  federal universities (confirm wording with owner)
+- CTAs: "View work" (anchor to works), "Contact"
+- Proof strip: 3 to 4 short stats (TODO(owner): real numbers)
+
+6.2 SELECTED WORKS
+- Grid of 4 to 6 cards, ordered by strength of proof.
+- Card: cover image, title, one-line outcome, stack tags, link to case study.
+- Works list:
+  1. SmoothBallot   (e-voting SaaS for Nigerian federal universities) FEATURED
+  2. SmoothTicket   (event ticketing: PDF tickets, analytics, messaging/booking)
+  3. SmoothContest  (pageant/voting contests)
+  4. Once Pay       (developer-first payment aggregation for sandbox/test payments)
+  5. Reelaay        (multi-component platform: payments, KYC, email deliverability)
+  6. Forex-Bot      (trading system in Go: backend, frontend, market adapters)
+
+6.3 SKILLS
+Grouped, no logo dump:
+- Backend: Node.js, TypeScript, NestJS, Go
+- Data: PostgreSQL, MySQL, Redis
+- Infra: Docker, Kubernetes, AWS, Azure
+- Leadership: team lead across three products, architecture and delivery
+Each group: short line on how the skills were applied.
+
+6.4 RECOMMENDATIONS
+- 3 to 5 short quotes from JSON: name, role, company, optional photo.
+- Only include quotes the owner has marked approved: true in the JSON
+  (recommender gave written permission). Skip any entry without it.
+- Each quote shows a small "Read on LinkedIn" link (linkedinUrl field).
+- TODO(owner): collect real quotes. Do not fabricate or rewrite quotes.
+  Trimming is allowed only with an ellipsis and must not change meaning.
+- Empty state: if no approved quotes exist, hide the section and show a
+  single line in the contact area: "Recommendations available on LinkedIn"
+  linking to the owner's LinkedIn profile.
+- JSON shape: { name, role, company, quote, linkedinUrl, approved, photo? }
+
+6.5 CONTACT
+- Email, LinkedIn, GitHub (TODO(owner): GitHub URL)
+- Simple mailto CTA. No form needed in v1.
+
+======================================================================
+7. CASE STUDY TEMPLATE  (/work/[slug])
+======================================================================
+MDX frontmatter:
+  title, slug, summary, role, timeline, year, stack[], links{live,repo},
+  cover, metrics[{label,value}], featured(bool)
+
+Page sections in order:
+  1. Header: title, role, timeline, stack tags, live link
+  2. Key metrics bar (amber numbers)
+  3. Context        (1 short paragraph: what it is, who it is for)
+  4. Problem        (what was broken or missing, who felt it)
+  5. Constraints    (scale, budget, deadlines, infra realities)
+  6. Solution       (approach plus architecture diagram)
+  7. Key decisions  (3 to 5 decisions with tradeoffs)
+  8. Result         (numbers first, then qualitative outcome)
+  9. Learnings      (what I would do differently)
+ 10. Next / previous case study navigation
+
+Diagrams: use Mermaid or static SVG, dark-theme friendly.
+
+======================================================================
+8. CONTENT FILE LAYOUT
+======================================================================
+/content/work/smoothballot.mdx
+/content/work/smoothticket.mdx
+/content/work/smoothcontest.mdx
+/content/work/once-pay.mdx
+/content/work/reelaay.mdx
+/content/work/forex-bot.mdx
+/content/skills.json
+/content/recommendations.json
+/content/site.json   (name, tagline, links, proof strip)
+
+Adding a new project must require only a new MDX file.
+
+======================================================================
+9. BUILD ORDER (PROMPT SEQUENCE)
+======================================================================
+Step 1: Scaffold project, Tailwind config with tokens, layout shell, nav, footer.
+Step 2: Hero section reading site.json.
+Step 3: Works grid reading MDX frontmatter.
+Step 4: Case study page template with all sections and metrics bar.
+Step 5: Skills and Recommendations from JSON.
+Step 6: Seed all six MDX files with structure and TODO(owner) placeholders.
+Step 7: SEO: metadata per page, OpenGraph images, sitemap, robots, JSON-LD Person.
+Step 8: Polish: responsive pass, focus states, reduced-motion support.
+Step 9: QA: Lighthouse 95+ on all categories, contrast check, keyboard nav,
+        broken link check.
+Step 10: Deploy to Vercel, connect custom domain.
+
+======================================================================
+10. ACCEPTANCE CHECKLIST
+======================================================================
+[ ] Dark theme, tokens applied consistently
+[ ] All six case studies render from MDX
+[ ] No fabricated data; all gaps marked TODO(owner)
+[ ] No em dashes in copy
+[ ] Mobile layout verified at 360px
+[ ] Lighthouse 95+
+[ ] OG image per case study
+[ ] Contact links work
+
+======================================================================
+11. OPTIONAL PHASE 2: "ASK ABOUT MY WORK" CHAT
+======================================================================
+- Retrieval over the case study MDX files only.
+- System prompt: answer strictly from provided content; if unknown, say so
+  and point to the contact email.
+- Rate limit the endpoint, no user data stored, streaming responses.
+
+======================================================================
+12. INPUTS STILL NEEDED FROM OWNER
+======================================================================
+- Real metrics per project (users, votes processed, uptime, revenue, time saved)
+- Screenshots or diagrams per project
+- Live URLs and repo links where public
+- 3 to 5 recommendations with permission to publish
+- GitHub URL, profile photo, preferred domain name
