@@ -32,6 +32,34 @@ export default function Home() {
           A software engineer with 6+ years of experience building reliable,
           high-performance web applications that solve real-world problems.
         </p>
+
+        <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2">
+          <a
+            href="#works"
+            aria-label="Scroll down to view works"
+            title="View works"
+            className="scroll-cue reveal p-2 text-xs font-medium uppercase tracking-widest text-muted transition hover:text-accent"
+            style={{ animationDelay: "1.2s" }}
+          >
+            <span className="scroll-cue-arrow">
+              <svg
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden
+              >
+                <path d="m6 7 6 6 6-6" />
+                <path d="m6 13 6 6 6-6" />
+              </svg>
+            </span>
+            <span className="mt-1 block">View works</span>
+          </a>
+        </div>
       </section>
 
       <Works />

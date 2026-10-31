@@ -50,6 +50,31 @@ body {
   animation: rise 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
+/* Down-arrow scroll cue in the hero. Defined after .reveal so its display
+   wins over .reveal's inline-block. */
+.scroll-cue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  text-align: center;
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(9px);
+  }
+}
+
+.scroll-cue-arrow {
+  display: block;
+  animation: bob 1.5s ease-in-out infinite;
+}
+
 /* Scroll reveal: JS (reveal-client) tags cards `reveal-pending` when below
    the fold, then `revealed` once they intersect the viewport. */
 @media (prefers-reduced-motion: no-preference) {
