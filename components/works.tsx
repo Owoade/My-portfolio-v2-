@@ -9,7 +9,7 @@ export const WORKS = [
     slug: "smoothballot",
     image: "/works/smoothballot.png",
     summary:
-      "E-voting SaaS platform powering elections across federal universities in Nigeria.",
+      "E-voting SaaS platform that digitizes elections for institutions.",
   },
   {
     title: "SmoothContest",
