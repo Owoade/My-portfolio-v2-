@@ -8,6 +8,7 @@ interface QuoteEntry {
   quote: string;
   avatar?: string;
   approved: boolean;
+  linkedinUrl?: string;
 }
 
 function getApprovedQuotes(): QuoteEntry[] {
