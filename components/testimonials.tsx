@@ -56,7 +56,7 @@ export default function Testimonials() {
   return (
     <section id="testimonials" className="px-5 sm:px-[10vw] pb-32">
       <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
-        Kind <span className="text-accent">words</span>
+        LinkedIn <span className="text-accent">Recommendations</span>
       </h2>
 
       <ul className="mt-10 grid gap-4 sm:grid-cols-2">
@@ -70,10 +70,35 @@ export default function Testimonials() {
             </p>
             <div className="mt-6 flex items-center gap-3">
               <Avatar name={entry.name} src={entry.avatar} />
-              <div>
+              <div className="min-w-0">
                 <p className="text-sm font-semibold">{entry.name}</p>
                 <p className="text-xs text-muted">{entry.role}</p>
               </div>
+              {entry.linkedinUrl && (
+                <a
+                  href={entry.linkedinUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-auto inline-flex items-center gap-1.5 text-xs font-medium text-accent transition-colors hover:text-accent/80"
+                >
+                  Read on LinkedIn
+                  <svg
+                    aria-hidden="true"
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                </a>
+              )}
             </div>
           </li>
         ))}
